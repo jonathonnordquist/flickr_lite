@@ -1,0 +1,39 @@
+<div class="container">
+  <h1>Welcome to Flick Junior!</h1>
+
+  <% if !session[:user_id] %>
+  <a href="/users/new">Sign Up</a>
+  <% end %>
+
+  <% if session[:error] %>
+    <h3><%= session[:error] %></h3>
+    <% session[:error] = nil %>
+  <% end %>
+
+  <% if session[:user_id] %>
+    <h3>Welcome <%= User.find(session[:user_id]).username %></h3>
+  <% end %>
+
+  <% if !session[:user_id] %>
+    <form method="post" action="/users/login">
+
+      <input type="text" placeholder="Username" name="username">
+      <input type="password" placeholder="Password" name="password">
+      <input type="submit">
+
+    </form>
+  <% end %>
+
+  <% if session[:user_id] %>
+
+    <form method="post" action="/users/logout">
+      <input type="submit" value="Logout">
+    </form>
+
+    <form method="get" action="/users/"<%= session[:user_id] %>>
+      <input type="submit">
+    </form>
+
+  <% end %>
+
+</div>

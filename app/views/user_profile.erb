@@ -1,0 +1,13 @@
+<div class="container">
+  <% if session[:user_id] %>
+
+    <form method="post" action="/users/logout">
+      <input type="submit" value="Logout">
+    </form>
+
+    <form method="get" action="/albums/new">
+      <input type="submit" value="Create New Album">
+    </form>
+
+  <% end %>
+</div>
