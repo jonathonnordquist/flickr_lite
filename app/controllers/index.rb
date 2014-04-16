@@ -52,7 +52,9 @@ post '/users/login' do
 end
 
 post '/users/:user_id/albums' do
-
+  @users_name = User.find(session[:user_id]).username
+  @albums = Album.where(user_id: session[:user_id])
+  erb :show_album_list
 end
 
 post '/users/logout' do
@@ -76,7 +78,7 @@ post '/albums' do
     f.write(params['picture'][:tempfile].read)
   end
 
-  new_album = Album.create(album_name: params[:album_name])
+  new_album = Album.create(album_name: params[:album_name], user_id: session[:user_id])
 
   Image.create(image_file: "uploaded_images/" + params['picture'][:filename], album_id: new_album.id)
 
