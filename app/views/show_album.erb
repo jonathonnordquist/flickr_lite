@@ -1,4 +1,9 @@
 <div class="container">
+  <form method="get" action="/users/:user_id">
+
+    <input type="submit" value="User Profile">
+
+  </form>
   <h1><%= @album.album_name %></h1>
   <% @images.each do |x| %>
     <img src="../../<%= x.image_file %>">
