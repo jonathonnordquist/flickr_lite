@@ -1,9 +1,20 @@
 .container {
   margin: 20px auto;
-  width: 600px;
+  width: 80%;
   padding: 0px 20px 20px 20px;
   border: 1px dotted black;
 }
 th {
   text-align: left;
+}
+
+.thumb_nail {
+  max-height: 35%;
+  max-width: 35%;
+  height: auto;
+  width: auto;
+}
+
+.highlight {
+  background-color: yellow;
 }

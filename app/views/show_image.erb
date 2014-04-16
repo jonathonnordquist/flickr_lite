@@ -1,4 +1,7 @@
 <div class="container">
-  <img src='<%= @latest_image %>'>
-  <%= @latest_image  %>
+  <form method="get" action="/users/:user_id">
+    <input type="submit" value="User Profile">
+  </form>
+
+  <img src="../../../<%= @image.image_file %>">
 </div>

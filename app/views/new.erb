@@ -4,12 +4,15 @@
   <form action="/albums" method="post" enctype="multipart/form-data">
     <label>What do you want to call your new album?</label>
     <br />
-    <input type="text" name="album_name">
-    <br />
-    <input type="file" name="picture1">
+
+    <div class="image_addition">
+      <input type="text" name="album_name" id="album_name">
+    </div>
+
     <br />
     <input type="button" value="Add Another Image" id="extra_pic">
+    <input type="button" value="Remove Added Image" id="remove_pic">
     <br />
-    <input type="submit">
+    <input type="submit" id="submit_new_images">
   </form>
 </div>
