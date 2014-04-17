@@ -4,9 +4,7 @@
   </form>
   <h1><%= @album.album_name %></h1>
   <% @images.each do |x| %>
-    <a href="/albums/<%= session[:user_id] %>/photos/<%= x.id %>">
       <img class="thumb_nail" src="../../<%= x.image_file %>">
-    </a>
 
   <% end %>
 
