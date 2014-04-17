@@ -1,7 +1,5 @@
 get '/albums/:album_id/photos/:photo_id' do
   @image = Image.find(params[:photo_id])
-  p "=============================================="
-  p @image
   erb :show_image
 end
 

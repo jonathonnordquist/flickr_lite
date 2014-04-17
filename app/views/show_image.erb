@@ -3,5 +3,22 @@
     <input type="submit" value="User Profile">
   </form>
 
-  <img src="../../../<%= @image.image_file %>">
+  <img class="full_image" src="../../../<%= @image.image_file %>">
+
+  <div id="comment_area">
+    <form method="post" action="">
+      <textarea id="comment_content" rows="6" cols="50" placeholder="Leave a comment..."></textarea>
+      </br>
+      <input type="hidden" id="users_id" value="<%= session[:user_id] %>">
+      <input type="hidden" id="image_id" value="<%= @image.id %>">
+
+      <input type="submit" value="Post Comment" id="post_comment">
+    </form>
+    <div id="posted_comments">
+
+    </div>
+
+
+
+  </div>
 </div>

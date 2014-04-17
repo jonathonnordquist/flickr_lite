@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   validate :password_has_number_and_capital_letter
 
   has_many   :albums
+  has_many   :images, through: :albums
+  has_many   :comments
 end
 
 def password_has_number_and_capital_letter

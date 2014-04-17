@@ -15,6 +15,12 @@ th {
   width: auto;
 }
 
+.full_image {
+  width: 90%;
+}
+
 .highlight {
   background-color: yellow;
 }
+
+
