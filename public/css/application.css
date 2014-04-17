@@ -24,11 +24,15 @@ th {
 .highlight {
   background-color: yellow;
 }
-
-.current_image {
+.current_image{
+  width: 100%;
+}
+.current {
   width: 70%;
-  z-index: +1;
   position: absolute;
+  left: 15%;
+  top: 50px;
   margin: auto;
+  border: 3px inset gray;
 }
 
