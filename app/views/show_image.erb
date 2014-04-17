@@ -15,6 +15,11 @@
       <input type="submit" value="Post Comment" id="post_comment">
     </form>
     <div id="posted_comments">
+      <% @comments.each_with_index do |comment, index| %>
+        <h4>Comment posted by <%= @creator_names[index] %></h4>
+        <span id="comment_time"><%= comment.created_at %></span>
+        <p><%= comment.content %></p>
+      <% end %>
 
     </div>
 
