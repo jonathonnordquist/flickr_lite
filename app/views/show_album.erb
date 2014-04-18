@@ -4,9 +4,12 @@
   </form>
   <h1><%= @album.album_name %></h1>
   <% @images.each do |x| %>
-      <img class="thumb_nail" src="../../<%= x.image_file %>">
+      <img class="thumb_nail" src="../../<%= x.image_file %>" id="image-no<%= x.id %>" data-image-no="<%= x.id %>">
 
   <% end %>
 
 
 </div>
+<form>
+<input type="hidden" id="user-session" value="<%= session[:user_id] %>">
+</form>

@@ -1,14 +1,10 @@
 get '/albums/:album_id/photos/:photo_id' do
   @image = Image.find(params[:photo_id])
   @comments = Comment.where(image_id: params[:photo_id])
-  p "+++========================================================"
-  p @comments
   @creator_names = []
   @comments.each do |comment|
     @creator_names << User.where(id: comment.user_id)[0].username
   end
-  p "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-  p @creator_names
   erb :show_image
 end
 

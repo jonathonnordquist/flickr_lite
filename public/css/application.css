@@ -34,5 +34,10 @@ th {
   top: 50px;
   margin: auto;
   border: 3px inset gray;
+  background-color: #280000;
+}
+
+#comment_text{
+  color: white;
 }
 
