@@ -21,8 +21,6 @@ $(document).ready(function() {
       function(data){
         var djsonified = $.parseJSON(data);
         $.each(djsonified, function(index, value){
-          console.log(value)
-          console.log("nother")
           $("#posted_comments").prepend("<div id='comment_text'><h4>Comment posted by " + value.username + "</h4><p>" + value.content + "</p></div>")
         })
       });
