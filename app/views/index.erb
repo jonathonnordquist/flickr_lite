@@ -1,7 +1,9 @@
 <div class="container">
 
+  <% if false %>
   <% if !session[:user_id] %>
   <a href="/users/new">Sign Up</a>
+  <% end %>
   <% end %>
 
   <% if session[:error] %>

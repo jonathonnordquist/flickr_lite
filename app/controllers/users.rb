@@ -11,12 +11,15 @@ get '/users/:user_id' do
 end
 
 post '/users' do
-  user = User.new(params[:user])
+  p "========================================="
+  p params
+  user = User.new(username: params[:username], password: params[:password], password_confirmation: params[:password_confirmation], email: params[:email])
   if user.save
     session[:user_id] = user.id
-    redirect "/users/#{session[:user_id]}"
+    return "account created"
+    # redirect "/users/#{session[:user_id]}"
   else
-    redirect "/"
+    return "account not created"
   end
 
   # OR (but use first one)
@@ -28,7 +31,7 @@ post '/users' do
   #   they need to re enter stuff
   # end
 
-  redirect '/'
+  # redirect '/'
 end
 
 post '/users/login' do
@@ -37,17 +40,18 @@ post '/users/login' do
   user = User.find_by_username(params[:username])
   if user && user.authenticate(params[:password])
     session[:user_id] = user.id
-    login_success = true
+    session[:error] = nil
+    login_status = "logged_in"
   elsif user
     session[:error] = "Your password was incorrect."
-    login_success = false
+    login_status = "bad_password"
   else
     session[:error] = "This username doesn't exist."
-    login_success = false
+    login_status = "no_username"
   end
   p "======================================="
-  p login_success
-  p login_success.to_json
+  p login_status
+  p login_status.to_json
   # redirect "/users/#{session[:user_id]}"
 end
 
