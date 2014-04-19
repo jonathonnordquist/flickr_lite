@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
   $("body").on("click", "#post_comment", function(){
     event.preventDefault();
     var comment_content = $("#comment_content").val()

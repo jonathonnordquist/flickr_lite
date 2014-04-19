@@ -32,16 +32,23 @@ post '/users' do
 end
 
 post '/users/login' do
-
+  p params[:username]
+  p params[:password]
   user = User.find_by_username(params[:username])
   if user && user.authenticate(params[:password])
     session[:user_id] = user.id
+    login_success = true
   elsif user
     session[:error] = "Your password was incorrect."
+    login_success = false
   else
     session[:error] = "This username doesn't exist."
+    login_success = false
   end
-  redirect "/users/#{session[:user_id]}"
+  p "======================================="
+  p login_success
+  p login_success.to_json
+  # redirect "/users/#{session[:user_id]}"
 end
 
 post '/users/:user_id/albums' do
