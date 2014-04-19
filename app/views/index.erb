@@ -1,8 +1,9 @@
 <div class="container">
-  <h1>Welcome to Flick Junior!</h1>
 
+  <% if false %>
   <% if !session[:user_id] %>
   <a href="/users/new">Sign Up</a>
+  <% end %>
   <% end %>
 
   <% if session[:error] %>
@@ -15,13 +16,7 @@
   <% end %>
 
   <% if !session[:user_id] %>
-    <form method="post" action="/users/login">
 
-      <input type="text" placeholder="Username" name="username">
-      <input type="password" placeholder="Password" name="password">
-      <input type="submit">
-
-    </form>
   <% end %>
 
   <% if session[:user_id] %>
@@ -35,5 +30,7 @@
     </form>
 
   <% end %>
+
+
 
 </div>

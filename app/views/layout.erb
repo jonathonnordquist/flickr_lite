@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
+  <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
@@ -11,13 +11,32 @@
     application.css is where you put your styles
   -->
   <link rel="stylesheet" href="/css/application.css">
+  <link rel="stylesheet" href="/css/color_scheme.css">
+  <link rel="stylesheet" href="/css/top_bar_styling.css">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/js/jquery-ui-1.10.4.custom.js"></script>
+  <script src="/js/user_login_management.js"></script>
   <script src="/js/application.js"></script>
+  <script src="/js/image_manip.js"></script>
+  <script src="/js/comment_scripting.js"></script>
 
   <title></title>
 </head>
-<body>
-  <%= yield %>
+<body class="shuttle_grey_background">
+  <div id="top_bar">
+    <a href="/" id="topbar_logo" class="scarlet baby_blue_background">Emage</a>
+
+    <% if !session[:user_id] %>
+      <a href="/" id="login_form" class="user_management baby_blue_background black">Login or Register</a>
+    <% elsif session[:user_id] %>
+      <a href="/" id="user_page_link" class="user_management scarlet baby_blue_background black">User Profile</a>
+    <% end %>
+
+
+
+
+  </div>
+    <%= yield %>
 </body>
 </html>

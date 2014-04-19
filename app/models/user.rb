@@ -3,18 +3,25 @@ class User < ActiveRecord::Base
   validates :username, presence: true
   validates :email, format: {with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, message: "Please enter a valid email."}
   validates :password, length: {minimum: 6}
-  validate :password_has_number_and_capital_letter
+
+  # validate :password_has_number_and_capital_letter
 
   has_many   :albums
+  has_many   :images, through: :albums
+  has_many   :comments
 end
 
-def password_has_number_and_capital_letter
-  if password =~ /.?[A-Z].?/ and password =~ /.?[0-9].?/
-    true
-  else
-    false
-  end
-end
+# def non_unique_username do
+
+# end
+
+# def password_has_number_and_capital_letter
+#   if password =~ /.?[A-Z].?/ and password =~ /.?[0-9].?/
+#     true
+#   else
+#     false
+#   end
+# end
 
 =begin
 1Abcde

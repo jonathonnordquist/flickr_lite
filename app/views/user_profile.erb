@@ -9,5 +9,9 @@
       <input type="submit" value="Create New Album">
     </form>
 
+    <form method="post" action="/users/<%= session[:user_id] %>/albums">
+      <input type="submit" value="View Albums">
+    </form>
+
   <% end %>
 </div>

@@ -1,0 +1,14 @@
+<div class="container">
+  <h2><%= @users_name %>'s Albums</h2>
+
+  <% @albums.each do |album| %>
+    <a href="/albums/<%= album.id %>"><%= album.album_name %><a>
+      <br />
+  <% end %>
+
+  <form method="get" action="/users/:user_id">
+    <input type="submit" value="User Profile">
+  </form>
+
+
+</div>

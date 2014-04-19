@@ -1,9 +1,125 @@
 .container {
   margin: 20px auto;
-  width: 600px;
+  width: 80%;
   padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
 }
+
 th {
   text-align: left;
 }
+
+.thumb_nail {
+  max-height: 200px;
+  max-width: 200px;
+  height: auto;
+  width: auto;
+  clear: both;
+}
+
+.full_image {
+  width: 90%;
+}
+
+.highlight {
+  background-color: yellow;
+}
+.current_image{
+  width: 100%;
+}
+.current {
+  width: 70%;
+  position: absolute;
+  left: 15%;
+  top: 50px;
+  margin: auto;
+  border: 3px inset gray;
+}
+
+.inline_heading{
+  display: inline;
+}
+
+#user_login {
+  margin-bottom: 20px;
+}
+
+#login_content {
+  border-style: ridge;
+  border-width: 5px;
+  border-color: gray;
+  border-radius: 10px;
+  width: 600px;
+  height: 400px;
+  position: absolute;
+  left: 50%;
+  top: 100px;
+  margin-left: -300px;
+}
+
+.reg_text {
+  display: block;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 2px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2em;
+}
+
+.reg_fields {
+  display: block;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6px;
+}
+
+.close_image_button {
+  position: absolute;
+  right: 0;
+  -moz-box-shadow:inset 0px 1px 0px 0px #cae3fc;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #cae3fc;
+  box-shadow:inset 0px 1px 0px 0px #cae3fc;
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #79bbff), color-stop(1, #4197ee) );
+  background:-moz-linear-gradient( center top, #79bbff 5%, #4197ee 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#4197ee');
+  background-color:#79bbff;
+  -webkit-border-top-left-radius:20px;
+  -moz-border-radius-topleft:20px;
+  border-top-left-radius:20px;
+  -webkit-border-top-right-radius:20px;
+  -moz-border-radius-topright:20px;
+  border-top-right-radius:20px;
+  -webkit-border-bottom-right-radius:20px;
+  -moz-border-radius-bottomright:20px;
+  border-bottom-right-radius:20px;
+  -webkit-border-bottom-left-radius:20px;
+  -moz-border-radius-bottomleft:20px;
+  border-bottom-left-radius:20px;
+  text-indent:0;
+  border:1px solid #469df5;
+  display:inline-block;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:15px;
+  font-weight:bold;
+  font-style:normal;
+  height:20px;
+  line-height:20px;
+  width:65px;
+  text-decoration:none;
+  text-align:center;
+  text-shadow:1px 0px 0px #287ace;
+}
+.close_image_button:hover {
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #4197ee), color-stop(1, #79bbff) );
+  background:-moz-linear-gradient( center top, #4197ee 5%, #79bbff 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#4197ee', endColorstr='#79bbff');
+  background-color:#4197ee;
+}.close_image_button:active {
+  position:absolute;
+  right: 0;
+}
+/* This button was generated using CSSButtonGenerator
+

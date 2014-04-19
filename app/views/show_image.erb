@@ -1,4 +1,29 @@
 <div class="container">
-  <img src='<%= @latest_image %>'>
-  <%= @latest_image  %>
+  <form method="get" action="/users/:user_id">
+    <input type="submit" value="User Profile">
+  </form>
+
+  <img class="full_image" src="../../../<%= @image.image_file %>">
+
+  <div id="comment_area">
+    <form method="post" action="">
+      <textarea id="comment_content" rows="6" cols="50" placeholder="Leave a comment..."></textarea>
+      </br>
+      <input type="hidden" id="users_id" value="<%= session[:user_id] %>">
+      <input type="hidden" id="image_id" value="<%= @image.id %>">
+
+      <input type="submit" value="Post Comment" id="post_comment">
+    </form>
+    <div id="posted_comments">
+      <% @comments.each_with_index do |comment, index| %>
+        <h4>Comment posted by <%= @creator_names[index] %></h4>
+        <span id="comment_time"><%= comment.created_at %></span>
+        <p><%= comment.content %></p>
+      <% end %>
+
+    </div>
+
+
+
+  </div>
 </div>
