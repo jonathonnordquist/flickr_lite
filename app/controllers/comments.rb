@@ -12,7 +12,7 @@ end
 post '/comments/get' do
   output_info = []
   comments = Comment.where(image_id: params[:image_id]).each do |comment|
-    output_info << {content: comment.content, username: User.where(id: comment.user_id).first.username}
+    output_info << {content: comment.content, timestamp: comment.created_at.strftime("%l:%M %P, %b %-d, %Y"), username: User.where(id: comment.user_id).first.username}
   end
   output_info.to_json
 end

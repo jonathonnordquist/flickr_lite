@@ -21,7 +21,7 @@ $(document).ready(function() {
       function(data){
         var djsonified = $.parseJSON(data);
         $.each(djsonified, function(index, value){
-          $("#posted_comments").prepend("<div id='comment_text'><h4>Comment posted by " + value.username + "</h4><p>" + value.content + "</p></div>")
+          $("#posted_comments").prepend("<div id='comment_text'><h4 class='inline_heading'>Comment posted by " + value.username + "</h4><p class='inline_heading'> at " + value.timestamp + "</p><p>" + value.content + "</p></div>")
         })
       });
 

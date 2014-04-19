@@ -1,0 +1,50 @@
+/* Color scheme taken from colorcombos.com, number 202.  http://www.colorcombos.com/color-schemes/202/ColorCombo202.html */
+
+.pickled_bluewood {
+  color: #2D3956;
+}
+
+.blue_fiord {
+  color: #455372;
+}
+
+.shuttle_grey {
+  color: #616A7F;
+}
+
+.grey_mercury {
+  color: #E7E7E7;
+}
+
+.baby_blue {
+  color: #E0E9E9;
+}
+
+.scarlet {
+  color: #FF1A00;
+}
+
+
+.pickled_bluewood_background {
+  background-color: #2D3956;
+}
+
+.blue_fiord_background {
+  background-color: #455372;
+}
+
+.shuttle_grey_background {
+  background-color: #616A7F;
+}
+
+.grey_mercury_background {
+  background-color: #E7E7E7;
+}
+
+.baby_blue_background {
+  background-color: #E0E9E9;
+}
+
+.scarlet_background {
+  background-color: #FF1A00;
+}

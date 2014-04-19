@@ -7,7 +7,7 @@ $(document).ready(function() {
     // $(this).wrap(function(){
     //   return "<div class='current'>";
     // });
-    $(".popup").addClass("current_image");
+    $(".popup").addClass("current_image baby_blue_background pickled bluewood");
     $(".popup").hide(0);
     $(".popup").fadeIn("1500");
     // $(this).removeClass("thumb_nail");

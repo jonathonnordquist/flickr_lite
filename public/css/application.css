@@ -34,18 +34,11 @@ th {
   top: 50px;
   margin: auto;
   border: 3px inset gray;
-  background-color: #280000;
 }
 
-#comment_text{
-  color: white;
+.inline_heading{
+  display: inline;
 }
-
-/*#close_image_button{
-  color: red;
-  background-color: white;
-  font-size: 1.7em;
-}*/
 
 .close_image_button {
   position: absolute;
