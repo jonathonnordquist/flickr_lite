@@ -9,12 +9,13 @@ $(document).ready(function() {
       function(data){
         var djsonified = $.parseJSON(data);
         $("#posted_comments").prepend(
-          "<div id='comment_text'><h4>Comment posted by " + djsonified.comment_poster + "</h4><p>" + djsonified.comment_content + "</p></div>")
+          "<div id='comment_text'><h4 class='inline_heading'>Comment posted by " + djsonified.username + "</h4><p class='inline_heading'> at " + djsonified.timestamp + "</p><p>" + djsonified.content + "</p></div>")
         }
       );
   });
 
   loadCurrentComments = function(currentImage){
+    console.log("working")
     $.post('/comments/get',
       {image_id: image_id},
       function(data){
