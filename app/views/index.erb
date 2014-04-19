@@ -1,5 +1,4 @@
 <div class="container">
-  <h1>Welcome to emage</h1>
 
   <% if !session[:user_id] %>
   <a href="/users/new">Sign Up</a>
@@ -15,13 +14,7 @@
   <% end %>
 
   <% if !session[:user_id] %>
-    <form method="post" action="/users/login">
 
-      <input type="text" placeholder="Username" name="username">
-      <input type="password" placeholder="Password" name="password">
-      <input type="submit">
-
-    </form>
   <% end %>
 
   <% if session[:user_id] %>
@@ -35,5 +28,24 @@
     </form>
 
   <% end %>
+
+  <div id="login_content" class="baby_blue_background">
+      <form method="post" action="/users/login" id="user_login">
+        <label class="reg_text">Registered?  Sign in here</label>
+        <input type="text" placeholder="Username" name="username" class="reg_fields">
+        <input type="password" placeholder="Password" name="password" class="reg_fields">
+        <input type="submit" class="reg_fields">
+      </form>
+
+      <form method="post" action="/users">
+        <label class="reg_text">Need to register?  Thats cool.  Fill out the form and hit the button.</label>
+        <input type="text" placeholder="Username" name="user[username]" class="reg_fields">
+        <input type="password" placeholder="Password" name="user[password]" class="reg_fields">
+        <input type="password" placeholder="Confirm Password" name="user[password_confirmation]" class="reg_fields">
+        <input type="text" placeholder="Email" name="user[email]" class="reg_fields">
+        <input type="submit" class="reg_fields">
+      </form>
+
+    </div>
 
 </div>

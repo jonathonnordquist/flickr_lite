@@ -4,13 +4,9 @@ $(document).ready(function() {
     event.preventDefault();
     newPic = $(this).clone();
     createPopout(this)
-    // $(this).wrap(function(){
-    //   return "<div class='current'>";
-    // });
     $(".popup").addClass("current_image baby_blue_background pickled bluewood");
     $(".popup").hide(0);
     $(".popup").fadeIn("1500");
-    // $(this).removeClass("thumb_nail");
     $(".popup").find(".close_image_button").on('click', function(e){
       e.preventDefault();
       $(this).parent().remove();

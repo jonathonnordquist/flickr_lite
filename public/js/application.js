@@ -2,7 +2,6 @@ $(document).ready(function() {
   var imageCount = 0;
   addExtraImage = function(){
     $(".image_addition").append('<dir class="added_image_form"><br /><input type="file" name="picture[]" id="addition_file' + imageCount + '"><div class="picture_display added_image' + imageCount + '"></div></div>');
-    console.log(imageCount)
     imageCount += 1;
   };
 
