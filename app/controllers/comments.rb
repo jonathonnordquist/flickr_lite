@@ -5,7 +5,10 @@ post '/comments/post' do
   Comment.where(image_id: params[:image_id]).each do |x|
     output_info
   end
+  output_info[:timestamp] = new_comment.created_at.strftime("%l:%M %P, %b %-d, %Y")
   output_info[:comment_poster] = User.where(id: params[:user_id])[0].username
+  p "========================================="
+  p output_info.to_json
   output = output_info.to_json
 end
 
