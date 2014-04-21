@@ -1,10 +1,11 @@
 get '/albums/:album_id/photos/:photo_id' do
   @image = Image.find(params[:photo_id])
-  @comments = Comment.where(image_id: params[:photo_id])
-  @creator_names = []
-  @comments.each do |comment|
-    @creator_names << User.where(id: comment.user_id)[0].username
-  end
+  # Lower code commented out, used to be tied to show_image_old.erb.
+  # @comments = Comment.where(image_id: params[:photo_id])
+  # @creator_names = []
+  # @comments.each do |comment|
+  #   @creator_names << User.where(id: comment.user_id)[0].username
+  # end
   erb :show_image
 end
 

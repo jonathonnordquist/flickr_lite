@@ -15,14 +15,16 @@ $(document).ready(function() {
   });
 
   loadCurrentComments = function(currentImage){
-    console.log("working")
     $.post('/comments/get',
       {image_id: image_id},
       function(data){
         var djsonified = $.parseJSON(data);
 
         $.each(djsonified, function(index, value){
-          $("#posted_comments").prepend("<div id='comment_text'><h4 class='inline_heading'>Comment posted by " + value.username + "</h4><p class='inline_heading'> at " + value.timestamp + "</p><p>" + value.content + "</p></div>")
+          $("#posted_comments").prepend("<div class='comment_text'><h4 class='inline_heading'>Comment posted by " + value.username + "</h4><p class='inline_heading'> at " + value.timestamp + "</p><p>" + value.content + "</p><span style='display: none;' id='poster_id' value='" + value.user_id + "'></span></div>");
+          if(value.user_id == $("#user-session").val()){
+
+          }
         })
       });
 

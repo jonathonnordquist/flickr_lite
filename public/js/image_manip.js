@@ -1,8 +1,9 @@
 $(document).ready(function() {
+
+
   $(".thumb_nail").click(function(){
     image_id = $(this).attr("data-image-no") // Intentionally left public for accessability by comment_scripting
     event.preventDefault();
-    newPic = $(this).clone();
     createPopout(this)
     $(".popup").addClass("current_image baby_blue_background pickled bluewood");
     $(".popup").hide(0);
@@ -23,7 +24,10 @@ $(document).ready(function() {
 
 createPopout = function(targetImage){
   source = $(targetImage).attr('src')
-  var popup = $('<div class="popup current"><a href="#" class="close_image_button">Close</a><img src="' + source + '" class="current_image"/></div>');
+  var album_id =$("#album_id").attr("data_album_id")
+  console.log(album_id)
+  var popup = $('<div class="popup current"><a href="#" class="close_image_button">Close</a><a href="/albums/' + album_id + '/photos/' + image_id + '" target="_blank"><img src="' + source + '" class="current_image" title="popout_image"/></a></div>');
+  // $(".current_image").tooltip();
   $("body").append(popup)
 };
 

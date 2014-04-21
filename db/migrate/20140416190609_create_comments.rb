@@ -6,6 +6,7 @@ class CreateComments < ActiveRecord::Migration
       t.integer              :image_id
       t.boolean              :reply
       t.boolean              :reply_to
+      t.boolean              :deleted
 
       t.timestamps
     end
