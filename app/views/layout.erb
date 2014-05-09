@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="/css/application.css">
   <link rel="stylesheet" href="/css/color_scheme.css">
   <link rel="stylesheet" href="/css/top_bar_styling.css">
+  <link rel="stylesheet" href="/css/image_popup.css">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/jquery-ui-1.10.4.custom.js"></script>
@@ -24,7 +25,7 @@
     <% if !session[:user_id] %>
       <a href="/" id="login_form" class="user_management baby_blue_background black">Login or Register</a>
     <% elsif session[:user_id] %>
-      <a href="/" id="user_page_link" class="user_management scarlet baby_blue_background black"><%= session[:username] %>'s Profile</a>
+      <a href="/" id="user_page_link" class="user_management scarlet baby_blue_background black"><%= User.find(session[:user_id]).username %>'s Profile</a>
     <% end %>
 
   </div>

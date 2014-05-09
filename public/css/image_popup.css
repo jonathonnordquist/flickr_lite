@@ -1,0 +1,38 @@
+.comment_text{
+  width: 90%;
+  margin: auto;
+  border-bottom: 1px dotted #616A7F;
+}
+
+#comment_form{
+  width: 90%;
+  margin: 5px auto 15px auto;
+}
+
+#comment_form textarea{
+  width: 90%;
+  display: block;
+  margin: auto;
+}
+
+#post_comment {
+  margin-left: 5%;
+}
+#image_votes{
+  width: 90%;
+  margin: auto;
+}
+
+.thumb{
+  display: inline-block;
+  margin: 1px 4px;
+}
+
+.thumb:hover{
+  margin: 0 3px;
+  border: 1px dotted ;
+}
+
+#thumbs {
+  float: right;
+}
