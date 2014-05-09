@@ -24,7 +24,7 @@
     <% if !session[:user_id] %>
       <a href="/" id="login_form" class="user_management baby_blue_background black">Login or Register</a>
     <% elsif session[:user_id] %>
-      <a href="/" id="user_page_link" class="user_management scarlet baby_blue_background black"><%= session[:username] %>'s Profile</a>
+      <a href="/" id="user_page_link" class="user_management scarlet baby_blue_background black"><%= User.find(session[:user_id]).username %>'s Profile</a>
     <% end %>
 
   </div>

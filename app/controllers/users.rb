@@ -4,6 +4,7 @@ end
 
 get '/users/:user_id' do
   if session[:user_id]
+    p session
    erb :user_profile
   else
     redirect "/"
