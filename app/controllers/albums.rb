@@ -14,13 +14,13 @@ get '/albums/new' do
 end
 
 post '/albums' do
-  new_album = Album.create(album_name: params[:album_name], user_id: session[:user_id])
+  new_album = Album.create(album_name: params[:album_name], user_id: session[:user_id], album_vote_ups: 0, album_vote_downs: 0)
 
   if params["picture"] != nil
     params["picture"].each do |pic|
       File.open('public/uploaded_images/' + pic[:filename], "w") do |f|
         f.write(pic[:tempfile].read)
-        Image.create(image_file: "uploaded_images/" + pic[:filename], album_id: new_album.id)
+        Image.create(image_file: "uploaded_images/" + pic[:filename], album_id: new_album.id, image_vote_ups: 0, image_vote_downs: 0)
       end
     end
   end
@@ -36,13 +36,22 @@ get '/albums/:album_id' do
   erb :show_album
 end
 
-get '/albums/:album_id/edit' do
-
+post '/albums/image/vote' do
+  image = Image.find(params[:image])
+  params[:direction] == "thumbs_up" ? image.image_vote_ups += 1 : image.image_vote_downs += 1
+  image.save
+  "success"
 end
 
-post '/albums/:album_id' do
+get '/albums/get_votes/:id' do
+  votes = []
+  current_ups = Image.find(params[:id]).image_vote_ups
+  current_downs = Image.find(params[:id]).image_vote_downs
+  votes << current_ups
+  votes << current_downs
+  content_type :JSON
+  votes.to_json
 end
-
 
 
 
